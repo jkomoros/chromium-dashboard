@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="../css/elements/chromedash-featurelist.css">
   <ul id='viewmode'>
     <template repeat="{{mode in VIEW_MODES}}">
-      <li on-click="changeView">{{mode}}</li>
+      <li on-click="changeView" class="{{ selected : mode == view}}">{{mode}}</li>
     </template>
   </ul>
   <ul>

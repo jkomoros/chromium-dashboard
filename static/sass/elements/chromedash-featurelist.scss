@@ -56,6 +56,10 @@ div[firstofmilestone] {
   text-transform: capitalize;
 }
 
+#viewmode li.selected {
+  font-weight: bold;
+}
+
 #viewmode ~ ul{
   clear:both;
 }
