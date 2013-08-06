@@ -4,9 +4,9 @@
 <template>
   <link rel="stylesheet" type="text/css" href="../css/elements/chromedash-featurelist.css">
   <ul id='viewmode'>
-    <!-- TODO: generate this based on an enum -->
-    <li on-click="changeView">List</li>
-    <li on-click="changeView">Overview</li>
+    <template repeat="{{mode in VIEW_MODES}}">
+      <li on-click="changeView">{{mode}}</li>
+    </template>
   </ul>
   <ul>
     <template if="{{view == 'list'}}" repeat="{{feature in filtered}}">
@@ -28,6 +28,7 @@
     whitelisted: false,
     metadata: null,
     view: "list",
+    VIEW_MODES: ["list", "overview"],
     ready: function() {
       //this.asyncMethod(function() {
         this.features = this.features || [];
