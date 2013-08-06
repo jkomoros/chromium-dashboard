@@ -1,4 +1,4 @@
-<link rel="import" href="chromedash-color-status.html">
+<link rel="import" href="chromedash-sentiment-indicator.html">
 
 <polymer-element name="chromedash-feature" extends="li" attributes="feature open needsflag">
 <template>
@@ -9,7 +9,7 @@
     <content select=".edit"></content>
   </div>
   <hgroup>
-    <chromedash-color-status class="tooltip" title="Compatiblity Risk: overall interest from browser vendors and web developers" value="{{overallViews}}" max="7" corner></chromedash-color-status>
+    <chromedash-sentiment-indicator class="tooltip" title="Compatiblity Risk: overall interest from browser vendors and web developers" value="{{overallViews}}" max="7" corner></chromedash-sentiment-indicator>
     <h2>{{feature.name}}</h2>
     <label class="category" on-click="categoryFilter">{{feature.category}}</label>
   </hgroup>
