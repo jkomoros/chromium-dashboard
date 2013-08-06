@@ -49,20 +49,26 @@ div[firstofmilestone] {
 
 }
 
-#viewmode li {
-  float: left;
-  padding-right: 2em;
-  cursor: pointer;
-  text-transform: capitalize;
+#viewmode {
+
+  li {
+    float: left;
+    padding-right: 2em;
+    cursor: pointer;
+    text-transform: capitalize;
+
+    &.selected {
+      font-weight: bold;
+    }
+
+  }
+
+  ~ ul {
+    clear: both;
+  }
+  
 }
 
-#viewmode li.selected {
-  font-weight: bold;
-}
-
-#viewmode ~ ul{
-  clear:both;
-}
   
 chromedash-feature,
 [is="chromedash-feature"] {
