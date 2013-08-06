@@ -3,8 +3,13 @@
 <polymer-element name="chromedash-featurelist" attributes="whitelisted features">
 <template>
   <link rel="stylesheet" type="text/css" href="../css/elements/chromedash-featurelist.css">
+  <ul id='viewmode'>
+    <!-- TODO: generate this based on an enum -->
+    <li on-click="changeView">List</li>
+    <li on-click="changeView">Overview</li>
+  </ul>
   <ul>
-    <template repeat="{{feature in filtered}}">
+    <template if="{{view == 'list'}}" repeat="{{feature in filtered}}">
       <div firstofmilestone?="{{feature.firstOfMilestone}}" data-milestone="{{feature.shipped_milestone || feature.impl_status_chrome}}"></div>
       <li is="chromedash-feature" feature="{{feature}}" firstofmilestone?="{{feature.firstOfMilestone}}" data-milestone="{{feature.shipped_milestone || feature.impl_status_chrome}}" needsflag="{{feature.needsflag}}">
         <a href="/admin/features/edit/{{feature.id}}" class="edit" hidden?="{{!whitelisted}}">edit</a>
@@ -22,6 +27,7 @@
     applyAuthorStyles: true,
     whitelisted: false,
     metadata: null,
+    view: "list",
     ready: function() {
       //this.asyncMethod(function() {
         this.features = this.features || [];
@@ -41,6 +47,9 @@
         //     history.replaceState({}, this.highlighted.name, this.highlighted.menu.href);
         // }
       });
+    },
+    changeView : function(e, details, sender) {
+      this.view = sender.textContent.toLowerCase();
     },
     metadataChanged: function(oldVal) {
       // TODO: probably need to remove the listener if metadata element changes.

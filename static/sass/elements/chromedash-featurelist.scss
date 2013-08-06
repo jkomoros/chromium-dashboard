@@ -48,6 +48,16 @@ div[firstofmilestone] {
   }
 
 }
+
+#viewmode li {
+  float: left;
+  padding-right: 2em;
+  cursor: pointer;
+}
+
+#viewmode ~ ul{
+  clear:both;
+}
   
 chromedash-feature,
 [is="chromedash-feature"] {
