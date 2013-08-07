@@ -16,7 +16,7 @@
       </li>
     </template>
     <template if="{{view == 'overview'}}" repeat="{{feature in filtered}}">
-      <li is="chromedash-sentiment-indicator" feature="{{feature}}"></li>
+      <li is="chromedash-sentiment-indicator" feature="{{feature}}" width="{{feature.footprint * 50}}" height="{{feature.footprint * 50}}" class="overview"></li>
     </template>
   </ul>
 </template>

@@ -69,9 +69,14 @@ div[firstofmilestone] {
   
 }
 
-  
+li.overview {
+    float:left;
+    margin: 1em;
+}  
+
 chromedash-feature,
 [is="chromedash-feature"] {
+  
   /*$milestone-label-size: 40px;
 
   &[firstofmilestone] {
