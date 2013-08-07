@@ -15,6 +15,9 @@
         <a href="/admin/features/edit/{{feature.id}}" class="edit" hidden?="{{!whitelisted}}">edit</a>
       </li>
     </template>
+    <template if="{{view == 'overview'}}" repeat="{{feature in filtered}}">
+      <li is="chromedash-sentiment-indicator" feature="{{feature}}"></li>
+    </template>
   </ul>
 </template>
 <script>
