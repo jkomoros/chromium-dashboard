@@ -5,7 +5,7 @@
     <shadow></shadow>
   </template>
   <script>
-    Polymer('chromedash-sentiment-indicator'), {
+    Polymer('chromedash-sentiment-indicator', {
       feature : null,
       calculateOverallViews: function() {
         this.value = (this.feature.ff_views.value +
@@ -14,9 +14,8 @@
                      this.feature.web_dev_views.value) / 4;
       },
       featureChanged: function() {
-        //TODO: investigate why this is never called.
         this.calculateOverallViews();
       }
-    };
+    });
   </script>
   </polymer-element>
